@@ -46,7 +46,7 @@ export function FoundingStorySection() {
   }, []);
 
   return (
-    <section className="relative pt-12  bg-tertiary text-black overflow-hidden">
+    <section className="relative pt-12 pb-5  bg-tertiary text-black overflow-hidden">
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-1/4 left-1/4 h-[420px] w-[420px] rounded-full bg-[#800020]/20 blur-[140px]" />
         <div className="absolute bottom-1/4 right-1/3 h-[360px] w-[360px] rounded-full bg-[#1d2b34]/30 blur-[120px]" />
@@ -82,7 +82,7 @@ export function FoundingStorySection() {
                   {storyPoints.map((_, i) => (
                     <div
                       key={i}
-                      className={`flex  flex-col items-center transition-all duration-700 ${
+                      className={`flex text-justify  flex-col items-center transition-all duration-700 ${
                         visibleIndices.includes(i)
                           ? 'opacity-100 scale-100'
                           : 'opacity-40 scale-75'
@@ -105,7 +105,7 @@ export function FoundingStorySection() {
             </div>
           </div>
 
-          <div className="lg:col-span-10  space-y-10">
+          <div className="lg:col-span-10 text-sm md:text-base space-y-10">
             {storyPoints.map((text, i) => (
               <div
                 key={i}
@@ -113,13 +113,13 @@ export function FoundingStorySection() {
                   paragraphRefs.current[i] = el;
                 }}
                 data-index={i}
-                className={`transition-all duration-1000 ${
+                className={`transition-all text-justify text-sm md:text-base text-slate-700  duration-1000 ${
                   visibleIndices.includes(i)
-                    ? 'opacity-100 translate-y-0'
+                    ? 'opacity-100 translate-y-0 '
                     : 'opacity-0 translate-y-8'
                 }`}
               >
-                <div className="group relative">
+                <div className="group relative ">
                   <div
                     className={`absolute -left-6 top-2 h-2 w-2 rounded-full transition-all duration-500 ${
                       visibleIndices.includes(i)
@@ -129,9 +129,9 @@ export function FoundingStorySection() {
                   />
 
                   <p
-                    className={`text-base lg:text-base leading-relaxed transition-all duration-700 ${
+                    className={`px-2 md:px-0 text-base lg:text-lg leading-relaxed transition-all duration-700 ${
                       visibleIndices.includes(i)
-                        ? 'text-black'
+                        ? 'text-slate-800'
                         : 'text-slate-500'
                     }`}
                   >
@@ -141,7 +141,7 @@ export function FoundingStorySection() {
                   <div
                     className={`absolute -bottom-6 left-0 h-px transition-all duration-1000 origin-left ${
                       visibleIndices.includes(i)
-                        ? 'w-12 bg-gradient-to-r from-[#800020] to-transparent'
+                        ? 'w-24 bg-gradient-to-r from-[#800020] to-transparent'
                         : 'w-0 bg-gradient-to-r from-[#800020] to-transparent'
                     }`}
                   />

@@ -101,8 +101,8 @@ export default function HowWeWork() {
 
               <div className="col-span-2 relative z-10">
                 <div className="inline-flex items-center gap-2 mb-6">
-                  <div className="h-1 w-8 bg-gradient-to-r from-blue-500 to-transparent" />
-                  <span className="text-xs uppercase tracking-widest text-blue-600">{service.tagline}</span>
+                  <div className="h-1 w-8 bg-gradient-to-r from-secondary/20 to-transparent" />
+                  <span className="text-xs uppercase tracking-widest text-slate-200">{service.tagline}</span>
                 </div>
 
                 <h3 className="text-4xl lg:text-5xl font-bold mb-6 text-white">

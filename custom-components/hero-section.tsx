@@ -55,13 +55,13 @@ useEffect(() => {
           strokeWidth="1.5"
           d="M300,400 Q350,350 400,400 T500,400 M150,500 L200,520 L180,560 M600,300 Q650,280 700,320 L720,380 M800,250 L850,280 L870,320 L850,380 L800,400 M1000,200 Q1050,180 1100,220 L1120,300 L1100,400 L1050,420 M1300,150 L1350,180 L1380,250 L1360,350 L1300,380 M1500,200 Q1550,180 1600,220 L1620,300 L1600,400 L1550,420 M1700,250 L1750,280 L1800,320 L1750,380 M200,650 Q250,630 300,670 L320,730 M400,700 Q450,680 500,720 L520,780 M650,750 Q700,730 750,770 L770,830 M900,700 L950,730 L980,800 M1100,750 Q1150,730 1200,770 L1220,830 M1400,700 L1450,730 L1500,800 M1650,750 Q1700,730 1750,770 L1770,830"
         />
-        <circle cx="400" cy="350" r="8" fill="#00bcd4" opacity="0.6" className="animate-pulse-slow" />
+        <circle cx="400" cy="350" r="8" fill="#1d2b34" opacity="0.6" className="animate-pulse-slow" />
         <circle cx="950" cy="280" r="6" fill="#800020" opacity="0.5" className="animate-pulse-slow" style={{ animationDelay: '0.5s' }} />
-        <circle cx="1380" cy="200" r="7" fill="#00bcd4" opacity="0.6" className="animate-pulse-slow" style={{ animationDelay: '1s' }} />
+        <circle cx="1380" cy="200" r="7" fill="#1d2b34" opacity="0.6" className="animate-pulse-slow" style={{ animationDelay: '1s' }} />
         <circle cx="1580" cy="280" r="5" fill="#800020" opacity="0.5" className="animate-pulse-slow" style={{ animationDelay: '1.5s' }} />
-        <circle cx="280" cy="680" r="6" fill="#00bcd4" opacity="0.6" className="animate-pulse-slow" style={{ animationDelay: '0.3s' }} />
+        <circle cx="280" cy="680" r="6" fill="#1d2b34" opacity="0.6" className="animate-pulse-slow" style={{ animationDelay: '0.3s' }} />
         <circle cx="720" cy="760" r="7" fill="#800020" opacity="0.5" className="animate-pulse-slow" style={{ animationDelay: '1.2s' }} />
-        <circle cx="1200" cy="800" r="5" fill="#00bcd4" opacity="0.6" className="animate-pulse-slow" style={{ animationDelay: '0.8s' }} />
+        <circle cx="1200" cy="800" r="5" fill="#1d2b34" opacity="0.6" className="animate-pulse-slow" style={{ animationDelay: '0.8s' }} />
         <circle cx="1750" cy="760" r="6" fill="#800020" opacity="0.5" className="animate-pulse-slow" style={{ animationDelay: '1.8s' }} />
       </svg>
 
@@ -69,12 +69,12 @@ useEffect(() => {
         <div className="absolute inset-0 bg-gradient-to-br from-white via-white to-neutral-50" />
       </div> 
            */}
-{mounted && (
+{/* {mounted && (
   <div className="absolute inset-0 overflow-hidden">
     {particles.map((p, i) => (
       <div
         key={i}
-        className="absolute rounded-full bg-cyan-400 animate-pulse-slow"
+        className="absolute rounded-full bg-blue-600 animate-pulse-slow"
         style={{
           width: `${p.size}px`,
           height: `${p.size}px`,
@@ -86,7 +86,7 @@ useEffect(() => {
       />
     ))}
   </div>
-)}
+)} */}
 
 
       <div className="relative z-10 min-h-screen flex items-center">
@@ -94,7 +94,7 @@ useEffect(() => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <div
-                className={`space-y-2 mt-30 transition-all duration-1000 ${
+                className={`space-y-2 mt-14 lg:mt-30 transition-all duration-1000 ${
                   isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
                 }`}
               >
@@ -108,10 +108,10 @@ useEffect(() => {
 
               <div
                 className={`transition-all duration-1000 delay-200 ${
-                  isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                  isLoaded ? 'opacity-100 translate-y-0 animate-float lg:animate-none' : 'opacity-0 translate-y-10'
                 }`}
               >
-                <h2 className="text-xl lg:text-3xl font-bold text-black leading-tight">
+                <h2 className="text-xl lg:text-3xl  font-bold text-black leading-tight">
                   <span className="text-black"># Connecting product-first</span>
                   <br />
                   <span className="text-black">companies with </span>
@@ -153,8 +153,8 @@ This is not theoretical training. It is long-term strategic integration across m
                   isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
                 }`}
               >
-                <Link href="/connect"><button className="group text-primary animate-bounce  flex items-center gap-2 hover:text-cyan-400 transition-colors duration-300">
-                  <span className="text-sm font-medium">Explore my thinking</span>
+                <Link href="/connect"><button className="group text-primary animate-bounce  flex items-center gap-2 hover:text-secondary transition-colors duration-300">
+                  <span className="text-sm md:text-base font-medium">Explore my thinking</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
                 </button></Link>
               </div>
@@ -166,7 +166,7 @@ This is not theoretical training. It is long-term strategic integration across m
               }`}
             >
               <div className="relative w-full aspect-square max-w-md mx-auto">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#800020]/20 via-[#1d2b34]/40 to-cyan-400/20 rounded-full blur-3xl animate-pulse-slow" />
+                <div className="absolute inset-0 bg-gradient-to-br from-[#800020]/20 via-[#1d2b34]/40 to-primary/20 rounded-full blur-3xl animate-pulse-slow" />
                 <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-[#800020]/30 shadow-2xl">
                   <div className="w-full h-full bg-gradient-to-br from-[#1d2b34] to-[#800020] flex items-center justify-center">
                     <Image
@@ -175,7 +175,7 @@ This is not theoretical training. It is long-term strategic integration across m
                   </div>
                 </div>
 
-                <div className="absolute -inset-4 border-2 border-cyan-400/20 rounded-full animate-spin-slow" />
+                <div className="absolute -inset-4 border-2 border-secondary/20 rounded-full animate-spin-slow" />
                 <div className="absolute -inset-8 border border-[#800020]/20 rounded-full animate-spin-reverse" />
               </div>
 

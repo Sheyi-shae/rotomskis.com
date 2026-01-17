@@ -88,9 +88,9 @@ export function MyWorkSection() {
   const activeService = services.find((s) => s.id === activeId) || services[0];
 
   return (
-    <section className="relative pt-12 sm:pt-20  text-white overflow-hidden">
+    <section className="relative pt-8 sm:pt-20  text-white overflow-hidden">
       <div className="absolute inset-0 -z-10">
-        <div className="absolute top-1/3 right-1/4 h-[500px] w-[500px] rounded-full bg-cyan-500/10 blur-[150px]" />
+        <div className="absolute top-1/3 right-1/4 h-[500px] w-[500px] rounded-full bg-secondary/10 blur-[150px]" />
         <div className="absolute bottom-1/4 left-1/3 h-[400px] w-[400px] rounded-full bg-[#800020]/15 blur-[120px]" />
       </div>
 
@@ -139,7 +139,7 @@ export function MyWorkSection() {
                 />
 
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-cyan-500/10 via-transparent to-transparent" />
+                  <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-secondary/10 via-transparent to-transparent" />
                 </div>
 
                 <div className="relative p-6 h-full">
@@ -154,7 +154,7 @@ export function MyWorkSection() {
                   </h3>
 
                   <p className={`mt-2 text-xs uppercase tracking-widest transition-colors duration-500 ${
-                    isActive ? 'text-cyan-600' : 'text-blue-500'
+                    isActive ? 'text-slate-100' : 'text-slate-600'
                   }`}>
                     {service.tagline}
                   </p>
@@ -166,7 +166,7 @@ export function MyWorkSection() {
                   </p>
 
                   <div
-                    className={`absolute bottom-0 left-0 h-1 transition-all duration-500 bg-gradient-to-r from-blue-500 to-transparent ${
+                    className={`absolute bottom-0 left-0 h-1 transition-all duration-500 bg-gradient-to-r from-primary to-transparent ${
                       isActive ? 'w-full' : 'w-0 group-hover:w-12'
                     }`}
                   />
@@ -187,8 +187,8 @@ export function MyWorkSection() {
 
               <div className="relative z-10">
                 <div className="inline-flex items-center gap-2 mb-6">
-                  <div className="h-1 w-8 bg-gradient-to-r from-blue-500 to-transparent" />
-                  <span className="text-xs uppercase tracking-widest text-blue-600">{activeService.tagline}</span>
+                  <div className="h-1 w-8 bg-gradient-to-r from-secondary to-transparent" />
+                  <span className="text-xs uppercase tracking-widest text-secondary">{activeService.tagline}</span>
                 </div>
 
                 <h3 className="text-4xl lg:text-5xl font-semibold mb-6 text-primary">

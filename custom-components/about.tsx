@@ -39,14 +39,14 @@ export function WhyWeExistSection() {
         <div className="grid lg:grid-cols-2   gap-12 items-center ">
                   {/* Left: Content */}
             
-          <div className="border-2 border-primary order-2 lg:order-1  h-full">
+          <div className=" order-2 lg:order-1  h-full">
                   <div className={`${isVisible ? "animate-slide-in-right" : "opacity-0"}  relative`}>
             <Image
                             src="/img/about.png"
                             alt="Strategic business expansion and global market growth"
                             width={1200}
                             height={1200}
-                            className="w-full h-120 object-cover"
+                            className="w-full h-150 object-cover"
                           />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent" />
            
@@ -65,7 +65,7 @@ export function WhyWeExistSection() {
   Why Traditional Models Fail
             </h3>
 
-            <div className="text-xs lg:text-sm space-y-6 text-justify">
+            <div className="text-sm lg:text-base space-y-6 text-justify">
               <p className="text-secondary/70 leading-relaxed">
               Traditional business models were designed for a simpler environment. Markets were more stable, organizations more centralized, and growth paths more predictable. Strategy could be planned separately, execution delegated, and markets approached one at a time.
               </p>
@@ -87,7 +87,7 @@ export function WhyWeExistSection() {
 
        
         </div>
-           <div className="text-xs lg:text-sm space-y-6 text-justify p-2">
+           <div className="text-sm lg:text-base space-y-6 text-justify p-2">
              
 
                            <p className="text-secondary/70 leading-relaxed">

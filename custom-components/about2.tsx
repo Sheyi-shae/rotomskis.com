@@ -9,7 +9,7 @@ export default function About2({isVisible}: {isVisible: boolean}) {
   Why Integration Becomes Necessary
             </h3>
 
-               <div className="text-xs lg:text-sm space-y-6 text-justify">
+               <div className="text-sm lg:text-base space-y-6 px-2  text-justify">
               <p className="text-secondary/70 leading-relaxed">
              As systems grow more complex, coordination alone is no longer sufficient. Managing interfaces between strategy, execution, markets, capital, and leadership requires more than alignment meetings or reporting structures. It requires integration.
                   </p>
@@ -38,7 +38,7 @@ export default function About2({isVisible}: {isVisible: boolean}) {
   The Role of the Strategic Integrator
             </h3>
 
-               <div className="text-xs lg:text-sm space-y-6 text-justify">
+               <div className="text-sm lg:text-base space-y-6 px-2 text-justify">
               <p className="text-secondary/70 leading-relaxed">
              As systems grow more complex, coordination alone is no longer sufficient. Managing interfaces between strategy, execution, markets, capital, and leadership requires more than alignment meetings or reporting structures. It requires integration.
                   </p>

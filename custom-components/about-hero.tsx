@@ -18,7 +18,7 @@ export function AboutUsHero() {
   }, [])
 
   return (
-    <section className="relative pt-40  bg-gradient-to-br from-white via-tertiary to-white overflow-hidden">
+    <section className="relative pt-20 md:pt-40 pb-5   bg-gradient-to-br from-white via-tertiary to-white overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary/5 rounded-full blur-3xl animate-float" />
       <div
@@ -40,7 +40,7 @@ export function AboutUsHero() {
             
             <h3 className="text-xl lg:text-2xl font-bold text-secondary leading-tight mb-6 text-balance">Scaling in a Fragmented and Complex World</h3>
 
-            <div className="text-xs lg:text-sm space-y-6 text-justify">
+            <div className="text-sm lg:text-base space-y-6 text-justify">
               <p className="text-secondary/70 leading-relaxed">
                 We operate in a world where growth is no longer linear, but fragmented. Markets, supply chains, capital,
                 partners, and teams are spread across geographies, cultures, and systems of interest. What was once
@@ -80,7 +80,7 @@ export function AboutUsHero() {
           </div>
               
         </div>
-        <p className="text-xs lg:p-0 p-2 lg:text-sm  leading-relaxed font-semibold text-secondary">
+        <p className="text-sm lg:p-0 p-2 lg:text-base  leading-relaxed font-semibold text-secondary">
                 In this environment, businesses do not fail because they lack potential. They fail because complexity is
                 managed in silos, while the system as a whole remains unintegrated.
                           </p>

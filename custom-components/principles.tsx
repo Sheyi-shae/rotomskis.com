@@ -96,9 +96,9 @@ const flyIn: Variants = {
 
 export default function Principles() {
   return (
-      <div className="pt-12">
+      <div className=" ">
           <SectionReveal>
-              <h2 className="md:text-5xl text-4xl   font-bold text-[#0a0e27] mb-16 text-center">Our 
+              <h2 className="md:text-5xl text-4xl   font-bold text-[#0a0e27] mb-8  text-center">Our 
                   
                   <span className="text-primary ml-2">Principles</span>
             </h2>
