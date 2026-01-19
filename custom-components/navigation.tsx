@@ -10,7 +10,7 @@ const navItems = [
   { label: "About Us", href: "/about-us" },
   { label: "How We Work", href: "/how-we-work" },
   { label: "Portfolio", href: "#" },
-  { label: "Insights", href: "https://verslas.blog" },
+  { label: "Insights", href: "/insights" },
   // { label: "Contact", href: "/contact" },
 ]
 

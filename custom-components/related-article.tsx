@@ -31,7 +31,7 @@ export function RelatedArticles({ articleId }: RelatedArticlesProps) {
                 <div className="relative overflow-hidden h-48 bg-gradient-to-br from-primary/20 to-secondary/20">
                   <div
                     className="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-300"
-                    style={{ backgroundImage: article.image }}
+                    style={{ backgroundImage: article.detailedImg }}
                   />
                 </div>
 

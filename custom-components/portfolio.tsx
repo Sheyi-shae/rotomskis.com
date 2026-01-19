@@ -5,7 +5,7 @@ import { ArrowUpRight, Tag } from "lucide-react"
 import HeaderTitle from "./header-title"
 
 export function PortfolioSection() {
-  const [activeCategory, setActiveCategory] = useState<"all" | "export" | "market" | "tech">("all")
+  const [activeCategory, setActiveCategory] = useState<"all" | "strategy" | "market" | "interim" | "engineering">("all")
 
   const projects = [
     {
@@ -68,9 +68,10 @@ export function PortfolioSection() {
 
   const categories = [
     { id: "all", label: "All Projects" },
-    { id: "export", label: "Export Strategy" },
+    { id: "strategy", label: "Strategy Consulting" },
     { id: "market", label: "Market Entry" },
-    { id: "tech", label: "Digital Solutions" },
+    { id: "interim", label: "Interim Management" },
+    {id:'engineering', label:'PlatformEngineering'}
   ]
 
   return (
