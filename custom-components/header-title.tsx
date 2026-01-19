@@ -2,17 +2,17 @@ import React from 'react'
 import SectionReveal from './section-reveal'
 
 export default function HeaderTitle({ subHeader, header, colouredHeader, subText }:
-  { subHeader: string, header: string, colouredHeader: string, subText: string }) {
+  { subHeader?: string, header: string, colouredHeader: string, subText: string }) {
   return (
         <div className="max-w-3xl mb-4">
        <div className="relative inline-block mb-4">
-  <div className="border-trace">
-    <div className="px-4 py-2 bg-[#5C0120]/20 border border-[#5C0120]/40 rounded-full backdrop-blur-sm">
+  {subHeader && <div className="border-trace">
+    <div className="px-4 py-2 bg-slate-50 hover:bg-primary/20 border border-[#5C0120]/40 rounded-full backdrop-blur-sm">
       <span className="text-xs uppercase tracking-widest text-[#5C0120]">
         {subHeader}
       </span>
     </div>
-  </div>
+  </div>}
 </div>
      <SectionReveal>
           <h2 className="text-4xl lg:text-5xl font-bold leading-tight mb-1 text-black">

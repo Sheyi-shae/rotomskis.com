@@ -5,6 +5,7 @@ import type React from "react"
 import { useState } from "react"
 import { Mail, Phone, MapPin, Send, Check, MailCheck } from "lucide-react"
 import HeaderTitle from "./header-title"
+import { ConnectSection } from "./connect-section"
 
 export function ContactSection() {
   const [formState, setFormState] = useState({
@@ -75,10 +76,10 @@ export function ContactSection() {
                   
 
         
-
-        {/* Contact Form & Info */}
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left - Info */}
+<ConnectSection/>
+    
+        {/* <div className="grid lg:grid-cols-2 gap-12 items-center">
+     
           <div className="animate-slide-in-left">
             <h3 className="text-3xl font-bold text-secondary mb-6">Quick Response Guaranteed</h3>
 
@@ -103,7 +104,6 @@ export function ContactSection() {
             
           </div>
 
-          {/* Right - Form */}
           <div className="animate-slide-in-right">
             <form
               onSubmit={handleSubmit}
@@ -121,7 +121,7 @@ export function ContactSection() {
                 </div>
               ) : (
                 <div className="space-y-4">
-                  {/* Name Fields */}
+                 
                   <div className="grid grid-cols-2 gap-4">
                     <input
                       type="text"
@@ -143,7 +143,7 @@ export function ContactSection() {
                     />
                   </div>
 
-                  {/* Email & Phone */}
+                 
                   <div className="grid grid-cols-2 gap-4">
                     <input
                       type="email"
@@ -164,7 +164,7 @@ export function ContactSection() {
                     />
                   </div>
 
-                  {/* Company */}
+                
                   <input
                     type="text"
                     name="company"
@@ -175,7 +175,7 @@ export function ContactSection() {
                     className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all"
                   />
 
-                  {/* Message */}
+                 
                   <textarea
                     name="message"
                     placeholder="Tell us about your expansion goals..."
@@ -186,7 +186,7 @@ export function ContactSection() {
                     className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all resize-none"
                   />
 
-                  {/* Submit Button */}
+                 
                   <button
                     type="submit"
                     disabled={isLoading}
@@ -205,7 +205,6 @@ export function ContactSection() {
                     )}
                   </button>
 
-                  {/* Privacy Note */}
                   <p className="text-xs text-secondary/50 text-center">
                     We respect your privacy. Your information will only be used to contact you about your inquiry.
                   </p>
@@ -213,7 +212,7 @@ export function ContactSection() {
               )}
             </form>
           </div>
-        </div>
+        </div> */}
 
        
       </div>

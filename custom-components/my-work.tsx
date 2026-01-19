@@ -142,9 +142,10 @@ export function MyWorkSection() {
                   <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-secondary/10 via-transparent to-transparent" />
                 </div>
 
-                <div className="relative p-6 h-full">
-                   <div className={`mb-4 ${activeId === service.id ? "text-white" : "text-primary"}`}>
-            <Image src={service.icon} alt={service.title} width={32} height={32} className="w-12 h-12" />
+                <div className="relative p-6 h-full ">
+                  <div className="flex items-center gap-3">
+                   <div className={`mb-2 p-1 mt-2 rounded-md w-12 h-12 ${activeId === service.id ? "text-white bg-white" : "text-primary border-rose-200 border"}`}>
+            <Image src={service.icon} alt={service.title} width={32} height={32} className="w-12  h-12" />
           </div>
 
                   <h3 className={`mt-4 font-bold text-lg leading-tight transition-colors duration-500 ${
@@ -152,6 +153,7 @@ export function MyWorkSection() {
                   }`}>
                     {service.title}
                   </h3>
+                    </div>
 
                   <p className={`mt-2 text-xs uppercase tracking-widest transition-colors duration-500 ${
                     isActive ? 'text-slate-100' : 'text-slate-600'
@@ -159,7 +161,7 @@ export function MyWorkSection() {
                     {service.tagline}
                   </p>
 
-                  <p className={`mt-3 text-sm leading-relaxed transition-colors duration-500 ${
+                  <p className={`mt-3 text-sm text-justify leading-relaxed transition-colors duration-500 ${
                     isActive ? 'text-[#eef2f5]/80' : 'text-primary'
                   }`}>
                     {service.description.substring(0, 80)}...
@@ -202,7 +204,7 @@ export function MyWorkSection() {
                 <div className="space-y-4 mb-10">
                   {activeService.highlights.map((highlight, i) => (
                     <div key={i} className="flex items-start gap-4 group">
-                      <div className="flex-shrink-0 mt-1">
+                      <div className="flex-shrink-0 mt-2">
                         <div
                           className="w-2 h-2 rounded-full bg-rose-900 transition-all duration-300 group-hover:scale-150"
                        

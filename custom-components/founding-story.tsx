@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import { ArrowRight } from 'lucide-react';
 import HeaderTitle from './header-title';
 import Link from 'next/link';
+import SectionReveal from './section-reveal';
 
 const storyPoints = [
   "After years working in sales and corporate consulting, I made a deliberate decision to step away from the traditional path.",
@@ -66,13 +67,31 @@ export function FoundingStorySection() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 " ref={containerRef}>
         
-              <HeaderTitle
-                  colouredHeader='convention'
-                  subHeader='Our Foundation'
-                  header='Choosing structure over'
-                  subText='A deliberate path beyond traditional consulting toward meaningful global growth'
-              />
+        {/* header title here */}
 
+           <div className="max-w-3xl mb-4">
+       <div className="relative inline-block mb-4">
+  <div className="border-trace">
+    <div className="px-4 py-2 bg-slate-50 hover:bg-primary/20 border border-[#5C0120]/40 rounded-full backdrop-blur-sm">
+      <span className="text-xs uppercase tracking-widest text-[#5C0120]">
+       Our Foundation
+      </span>
+    </div>
+  </div>
+</div>
+     <SectionReveal>
+          <h2 className="text-4xl lg:text-5xl font-bold leading-tight mb-1 text-black">
+            <span className="">Choosing</span>
+              <span className=" text-[#800020] pl-2">legacy</span>
+              <span className="pl-2">over convention</span>  
+          </h2>
+          <p className="text-base lg:text-lg text-black/70 leading-relaxed">
+            A deliberate path beyond traditional consulting toward meaningful global growth
+        </p>
+      </SectionReveal>
+        </div>
+        
+        {/* header title end */}
         <div className="grid lg:grid-cols-12  gap-8 lg:gap-16 mt-20">
           <div className="hidden lg:block lg:col-span-2">
             <div className="sticky top-32 space-y-8">

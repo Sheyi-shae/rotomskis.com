@@ -3,7 +3,14 @@
 import { Calendar, ArrowRight, TrendingUp } from "lucide-react"
 import HeaderTitle from "./header-title"
 
+import Image from "next/image"
+import SectionReveal from "./section-reveal"
+import Link from "next/link"
+import { insightsData } from "@/insights"
+
 export function InsightsSection() {
+  const insights = insightsData
+
 
 
   return (
@@ -24,46 +31,52 @@ export function InsightsSection() {
                   </div>
 
         {/* Featured Article */}
-        <div className="mb-16 px-4 sm:px-6 lg:px-16 animate-scale-in">
-          <div className="bg-white rounded-3xl overflow-hidden shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-300">
-            <div className="grid md:grid-cols-2 gap-8 items-center">
-              {/* Image */}
-              <div
-                className="h-80 md:h-96 bg-cover bg-center bg-[url('/business-man.jpg')]"
-               
-              />
+        <div className="mb-16 px-4 space-y-4 gap-6 sm:px-6 lg:px-16 animate-scale-in">
+          
+          {insights.map((insight) => (
+            <SectionReveal key={insight.id}>
+            <div  className="rounded-xl  border border-primary/10  overflow-hidden  hover:shadow-2xl transition-all duration-300">
+              <div className="grid md:grid-cols-2 gap-8 items-center">
+                {/* Image */}
+                <div
+                  className=" bg-cover bg-center bg-slate-50">
+                  <Image src={insight.image} alt={insight.title} width={500} height={500} className="w-full h-full object-cover hover:scale-105 transition-all duration-300" />
+              </div>
 
               {/* Content */}
               <div className="p-8 md:p-12">
-                <div className="inline-block px-4 py-2 bg-primary/10 rounded-full mb-4">
-                  <span className="text-primary font-semibold text-sm">{'Business Development'}</span>
+                <div className="inline-block px-4  py-2 bg-primary/10 rounded-full mb-4">
+                  <span className="text-primary font-semibold text-sm">{insight.tagline}</span>
                 </div>
 
-                <h3 className="text-xl md:text-2xl font-bold text-secondary mb-4 leading-tight">{'Business Development Myths: What Are Your Beliefs That Are Holding You Back from Your Business Success?'}</h3>
+                    <Link href={`/insights/${insight.slug}`}>
+                <h3 className="text-xl md:text-2xl font-bold text-secondary mb-4 hover:text-primary transition-all duration-300 hover:cursor-pointer leading-tight">{insight.title}</h3>
 
-                <p className="text-sm md:text-base text-secondary/70 mb-6 leading-relaxed">{'Our experience and international research show that businesses can achieve ambitious growth if they are willing to rethink their capabilities and overcome internal limitations. However, many companies still face persistent myths that act as invisible barriers to their growth..'}</p>
+                      </Link>
+                <p className="text-sm md:text-base text-justify text-secondary/70 mb-6 leading-relaxed">{insight.excerpt}</p>
 
                 <div className="flex flex-wrap items-center gap-6 mb-6 text-secondary/60 text-sm">
-                  <div className="flex items-center gap-2">
-                    <Calendar size={16} />
-                    <span>{'Dec 15, 2025'}</span>
-                  </div>
+                  
                   <div className="flex items-center gap-2">
                     <TrendingUp size={16} />
-                    <span>{'8 min read'}</span>
+                    <span>{insight.minRead}</span>
                   </div>
                 </div>
 
-                <a
-                  href="https://verslas.blog/" target="_blank"
-                  className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all group"
+                <Link
+                  href={`/insights/${insight.slug}`} 
+                  className="inline-flex animate-pulse-slow items-center gap-2 text-primary font-semibold hover:gap-3 transition-all group"
                 >
-                  Read More Articles
+                  Read Article
                   <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-                </a>
+                </Link>
               </div>
             </div>
-          </div>
+           
+              </div>
+            </SectionReveal>
+          ))}
+            
         </div>
 
         {/* Article Grid */}
