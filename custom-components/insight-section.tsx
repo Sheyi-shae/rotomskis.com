@@ -20,7 +20,7 @@ export function InsightsSection() {
 
       <div className=" px-4 sm:px-6  relative z-10">
         {/* Header */}
-        <div className="px-4 sm:px-6 lg:px-16  animate-fade-in">
+        <div className="px-4 pb-3 sm:px-6 lg:px-16  animate-fade-in">
           <HeaderTitle
                      
                       colouredHeader="Insights"
@@ -31,53 +31,61 @@ export function InsightsSection() {
                   </div>
 
         {/* Featured Article */}
-        <div className="mb-16 px-4 space-y-4 gap-6 sm:px-6 lg:px-16 animate-scale-in">
-          
-          {insights.map((insight) => (
-            <SectionReveal key={insight.id}>
-            <div  className="rounded-xl  border border-primary/10  overflow-hidden  hover:shadow-2xl transition-all duration-300">
-              <div className="grid md:grid-cols-2 gap-8 items-center">
-                {/* Image */}
-                <div
-                  className=" bg-cover bg-center bg-slate-50">
-                  <Image src={insight.image} alt={insight.title} width={500} height={500} className="w-full h-full object-cover hover:scale-105 transition-all duration-300" />
-              </div>
-
-              {/* Content */}
-              <div className="p-8 md:p-12">
-                <div className="inline-block px-4  py-2 bg-primary/10 rounded-full mb-4">
-                  <span className="text-primary font-semibold text-sm">{insight.tagline}</span>
-                </div>
-
-                    <Link href={`/insights/${insight.slug}`}>
-                <h3 className="text-xl md:text-2xl font-bold text-secondary mb-4 hover:text-primary transition-all duration-300 hover:cursor-pointer leading-tight">{insight.title}</h3>
-
-                      </Link>
-                <p className="text-sm md:text-base text-justify text-secondary/70 mb-6 leading-relaxed">{insight.excerpt}</p>
-
-                <div className="flex flex-wrap items-center gap-6 mb-6 text-secondary/60 text-sm">
-                  
-                  <div className="flex items-center gap-2">
-                    <TrendingUp size={16} />
-                    <span>{insight.minRead}</span>
-                  </div>
-                </div>
-
-                <Link
-                  href={`/insights/${insight.slug}`} 
-                  className="inline-flex animate-pulse-slow items-center gap-2 text-primary font-semibold hover:gap-3 transition-all group"
-                >
-                  Read Article
-                  <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-                </Link>
-              </div>
-            </div>
-           
-              </div>
-            </SectionReveal>
-          ))}
-            
+        <div className="max-w-6xl mx-auto px-6 lg:px-8 space-y-24">
+  {insights.map((insight) => (
+    <SectionReveal key={insight.id}>
+      <article className="group grid lg:grid-cols-12 gap-12 items-start">
+        {/* Image */}
+        <div className="lg:col-span-5 overflow-hidden rounded-2xl bg-slate-100">
+          <Image
+            src={insight.image}
+            alt={insight.title}
+            width={600}
+            height={400}
+            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+          />
         </div>
+
+        {/* Content */}
+        <div className="lg:col-span-7 pt-2">
+          {/* Tag */}
+          <span className="inline-block text-xs uppercase tracking-widest text-primary mb-4">
+            {insight.tagline}
+          </span>
+
+          {/* Title */}
+          <Link href={`/insights/${insight.slug}`}>
+            <h3 className="text-2xl lg:text-3xl font-bold leading-tight text-secondary mb-4 group-hover:text-primary transition-colors">
+              {insight.title}
+            </h3>
+          </Link>
+
+          {/* Excerpt */}
+          <p className="text-lg text-secondary/70 leading-relaxed max-w-2xl mb-8">
+            {insight.excerpt}
+          </p>
+
+          {/* Meta + CTA */}
+          <div className="flex items-center gap-8 text-sm text-secondary/60">
+            <span>{insight.minRead}</span>
+
+            <Link
+              href={`/insights/${insight.slug}`}
+              className="inline-flex items-center gap-2 font-medium text-primary transition-all group-hover:gap-3"
+            >
+              Continue reading
+              <ArrowRight
+                size={16}
+                className="transition-transform group-hover:translate-x-1"
+              />
+            </Link>
+          </div>
+        </div>
+      </article>
+    </SectionReveal>
+  ))}
+</div>
+
 
         {/* Article Grid */}
        
