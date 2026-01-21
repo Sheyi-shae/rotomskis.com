@@ -7,7 +7,7 @@ export function FinalCTA() {
   return (
     <section className="relative py-28 overflow-hidden">
       {/* Subtle background accents */}
-      <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-[#5C0120]/10 rounded-full blur-3xl" />
+      <div className="absolute -z-10 -top-24 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-[#5C0120]/10 rounded-full blur-3xl" />
 
       <motion.div
         initial={{ opacity: 0, y: 24 }}

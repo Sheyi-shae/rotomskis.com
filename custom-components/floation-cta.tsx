@@ -31,9 +31,9 @@ export function FloatingCTA() {
               <X size={20} />
             </button>
           </div>
-          <p className="text-secondary/70 mb-4 text-sm">Have questions about global expansion? We're here to help!</p>
+          <p className="text-secondary/70 mb-4 text-sm">Have questions about global expansion? We&#39;re here to help!</p>
           <a
-            href="mailto:hello@strategicexpansion.com"
+            href="mailto:info@rotomskis.com"
             className="block w-full px-4 py-2 bg-primary text-white rounded-lg text-center font-semibold hover:shadow-lg transition-all"
           >
             Email Us

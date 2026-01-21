@@ -32,7 +32,7 @@ export function Navigation() {
         isScrolled ? "bg-white shadow-lg border-b border-gray-200" : "bg-transparent backdrop-blur-sm"
       }`}
     >
-        <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-[#5C0120]/10 rounded-full blur-3xl" />
+        <div className="absolute  -z-10 -top-24 left-1/2 -translate-x-1/2 w-[600px] h-[250px] bg-[#5C0120]/10 rounded-full blur-3xl" />
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
@@ -85,7 +85,7 @@ export function Navigation() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="block px-4 py-2 text-secondary hover:text-primary hover:bg-muted transition-colors"
+                className="block px-4 py-2 font-semibold text-rose-950 hover:text-primary hover:bg-muted transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 {item.label}

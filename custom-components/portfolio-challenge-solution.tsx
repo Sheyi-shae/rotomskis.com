@@ -104,8 +104,7 @@ export function ChallengeAndSolution({
           transition={{ duration: 0.6, delay: 0.4 }}
           className="mt-12 max-w-4xl mx-auto"
         >
-          <div className="bg-secondary/5 p-8 rounded-2xl border border-secondary/10">
-            <h3 className="text-xl font-bold text-secondary mb-4">Conclusion</h3>
+          <div className="bg-secondary/5 border-trace p-8 rounded-2xl border border-secondary/10">
             <p className="text-base text-secondary/80 leading-relaxed" dangerouslySetInnerHTML={{ __html: conclusion }} />
           </div>
         </motion.div>
