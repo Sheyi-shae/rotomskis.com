@@ -3,68 +3,71 @@
 import { useState } from "react"
 import { ArrowUpRight, Tag } from "lucide-react"
 import HeaderTitle from "./header-title"
+import { portfolioProjects } from "@/portfolio"
+import SectionReveal from "./section-reveal"
+import Link from "next/link"
 
 export function PortfolioSection() {
   const [activeCategory, setActiveCategory] = useState<"all" | "strategy" | "market" | "interim" | "engineering">("all")
 
-  const projects = [
-    {
-      id: 1,
-      title: "Baltic Wood Exports Expansion",
-      category: "export",
-      description: "Successfully launched Baltic premium wood products into Scandinavian and Central European markets",
-      result: "300% revenue increase",
-      tags: ["Export", "EU Markets", "B2B"],
-      image: "url('/wooden-products-factory.jpg')",
-    },
-    {
-      id: 2,
-      title: "Tech Startup Global Launch",
-      category: "market",
-      description: "Navigated market entry strategy for Lithuanian software company targeting US and Asian markets",
-      result: "15M valuation increase",
-      tags: ["SaaS", "Market Entry", "Growth"],
-      image: "url('/technology-startup-office.jpg')",
-    },
-    {
-      id: 3,
-      title: "Manufacturing Sector Transformation",
-      category: "tech",
-      description: "Modernized export processes and integrated digital solutions for traditional manufacturer",
-      result: "50% cost reduction",
-      tags: ["Operations", "Digitization", "Efficiency"],
-      image: "url('/manufacturing-facility-production.jpg')",
-    },
-    {
-      id: 4,
-      title: "Food & Beverage International Brand",
-      category: "export",
-      description: "Created distribution network across 8 European countries for premium Lithuanian spirits",
-      result: "250% market growth",
-      tags: ["Food & Beverage", "Distribution", "Branding"],
-      image: "url('/premium-beverage-products.jpg')",
-    },
-    {
-      id: 5,
-      title: "Enterprise B2B Partnership Model",
-      category: "market",
-      description: "Established strategic partnerships and supply chain for major industrial component manufacturer",
-      result: "€2.5M annual contracts",
-      tags: ["B2B", "Partnerships", "Supply Chain"],
-      image: "url('/industrial-machinery.png')",
-    },
-    {
-      id: 6,
-      title: "eCommerce Global Fulfillment",
-      category: "tech",
-      description: "Built international logistics and fulfillment infrastructure for growing eCommerce platform",
-      result: "12x customer growth",
-      tags: ["eCommerce", "Logistics", "Scale"],
-      image: "url('/ecommerce-warehouse-logistics.jpg')",
-    },
-  ]
+  // const projects = [
+  //   {
+  //     id: 1,
+  //     title: "Baltic Wood Exports Expansion",
+  //     category: "export",
+  //     description: "Successfully launched Baltic premium wood products into Scandinavian and Central European markets",
+  //     result: "300% revenue increase",
+  //     tags: ["Export", "EU Markets", "B2B"],
+  //     image: "url('/wooden-products-factory.jpg')",
+  //   },
+  //   {
+  //     id: 2,
+  //     title: "Tech Startup Global Launch",
+  //     category: "market",
+  //     description: "Navigated market entry strategy for Lithuanian software company targeting US and Asian markets",
+  //     result: "15M valuation increase",
+  //     tags: ["SaaS", "Market Entry", "Growth"],
+  //     image: "url('/technology-startup-office.jpg')",
+  //   },
+  //   {
+  //     id: 3,
+  //     title: "Manufacturing Sector Transformation",
+  //     category: "tech",
+  //     description: "Modernized export processes and integrated digital solutions for traditional manufacturer",
+  //     result: "50% cost reduction",
+  //     tags: ["Operations", "Digitization", "Efficiency"],
+  //     image: "url('/manufacturing-facility-production.jpg')",
+  //   },
+  //   {
+  //     id: 4,
+  //     title: "Food & Beverage International Brand",
+  //     category: "export",
+  //     description: "Created distribution network across 8 European countries for premium Lithuanian spirits",
+  //     result: "250% market growth",
+  //     tags: ["Food & Beverage", "Distribution", "Branding"],
+  //     image: "url('/premium-beverage-products.jpg')",
+  //   },
+  //   {
+  //     id: 5,
+  //     title: "Enterprise B2B Partnership Model",
+  //     category: "market",
+  //     description: "Established strategic partnerships and supply chain for major industrial component manufacturer",
+  //     result: "€2.5M annual contracts",
+  //     tags: ["B2B", "Partnerships", "Supply Chain"],
+  //     image: "url('/industrial-machinery.png')",
+  //   },
+  //   {
+  //     id: 6,
+  //     title: "eCommerce Global Fulfillment",
+  //     category: "tech",
+  //     description: "Built international logistics and fulfillment infrastructure for growing eCommerce platform",
+  //     result: "12x customer growth",
+  //     tags: ["eCommerce", "Logistics", "Scale"],
+  //     image: "url('/ecommerce-warehouse-logistics.jpg')",
+  //   },
+  // ]
 
-  const filtered = activeCategory === "all" ? projects : projects.filter((p) => p.category === activeCategory)
+  const filtered = activeCategory === "all" ? portfolioProjects : portfolioProjects.filter((p) => p.categoryId === activeCategory)
 
   const categories = [
     { id: "all", label: "All Projects" },
@@ -91,6 +94,7 @@ export function PortfolioSection() {
         {/* Category Filter */}
         <div className="flex flex-wrap justify-center gap-4 mb-16 animate-slide-in-down">
           {categories.map((category) => (
+            
             <button
               key={category.id}
               onClick={() => setActiveCategory(category.id as any )}
@@ -106,8 +110,13 @@ export function PortfolioSection() {
         </div>
 
         {/* Projects Grid */}
-        {/* <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filtered.map((project, i) => (
+      
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {filtered.map((project, i) => {
+            // truncate description
+            const truncateDesc= project.description.length > 100 ? project.description.slice(0, 100) + "..." : project.description
+            return (
+                <SectionReveal key={project.id}>
             <div
               key={project.id}
               className="group cursor-pointer animate-scale-in"
@@ -119,7 +128,7 @@ export function PortfolioSection() {
                 <div className="relative overflow-hidden h-48 bg-gradient-to-br from-primary/20 to-secondary/20">
                   <div
                     className="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-300"
-                    style={{ backgroundImage: project.image }}
+                    style={{ backgroundImage: project.imagebg }}
                   />
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
                 </div>
@@ -130,39 +139,42 @@ export function PortfolioSection() {
                     <Tag className="text-primary/50" size={16} />
                   </div>
 
-                  <h3 className="text-xl font-bold text-secondary mb-2 group-hover:text-primary transition-colors">
+                  <h3 className="text-xl font-bold text-secondary md:min-h-20 mb-2 sm:mb-0 group-hover:text-primary transition-colors">
                     {project.title}
                   </h3>
 
-                  <p className="text-secondary/70 text-sm mb-4 leading-relaxed flex-1">{project.description}</p>
+                    <div className="mb-4">
+                  <p className="text-secondary/70 text-sm  leading-relaxed flex-1">{truncateDesc}</p>
 
+                      </div>
                  
                   <div className="mb-4 p-3 bg-primary/10 rounded-lg">
                     <p className="text-xs text-secondary/60 mb-1">Result</p>
-                    <p className="font-bold text-primary">{project.result}</p>
+                    <p className="line-clamp-1 text-primary">{project.result}</p>
                   </div>
 
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.tags.map((tag, i) => (
-                      <span key={i} className="text-xs px-3 py-1 bg-tertiary text-secondary rounded-full">
+                  <div className="flex flex-wrap gap-2  mb-4">
+                    {project.tags.slice(0, 2).map((tag, i) => (
+                      <span key={i} className="text-xs  px-3 py-1 bg-tertiary text-secondary rounded-full">
                         {tag}
                       </span>
                     ))}
                   </div>
 
                  
-                  <button className="flex items-center justify-between w-full px-4 py-3 bg-primary/5 text-primary rounded-lg font-semibold hover:bg-primary hover:text-white transition-all duration-300 group/btn">
+                  <Link href={`/portfolio/${project.id}`}><button className="flex items-center justify-between w-full px-4 py-3 bg-primary/5 text-primary rounded-lg font-semibold hover:bg-primary hover:text-white transition-all duration-300 group/btn">
                     <span>View Project</span>
                     <ArrowUpRight
                       size={18}
                       className="group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform"
                     />
-                  </button>
+                  </button></Link>
                 </div>
               </div>
-            </div>
-          ))}
-        </div> */}
+                </div>
+                </SectionReveal>
+          )})}
+        </div>
 
         {/* CTA Section */}
         {/* <div className="mt-20 text-center animate-fade-in">

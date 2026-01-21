@@ -9,7 +9,7 @@ const navItems = [
 
   { label: "About Us", href: "/about-us" },
   { label: "How We Work", href: "/how-we-work" },
-  { label: "Portfolio", href: "#" },
+  { label: "Portfolio", href: "/portfolio" },
   { label: "Insights", href: "/insights" },
   // { label: "Contact", href: "/contact" },
 ]
@@ -28,10 +28,12 @@ export function Navigation() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed  top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled ? "bg-white shadow-lg border-b border-gray-200" : "bg-transparent backdrop-blur-sm"
       }`}
     >
+        <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-[#5C0120]/10 rounded-full blur-3xl" />
+      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}

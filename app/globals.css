@@ -260,6 +260,14 @@
       transform: translateY(-20px);
     }
   }
+  @keyframes bounce-slow {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
   .animate-fade-in {
     animation: fadeIn 0.5s ease-in;
   }
@@ -298,6 +306,9 @@
 
   .animate-spin-slow {
     animation: spin-slow 20s linear infinite;
+  }
+  .animate-bounce-slow {
+    animation: bounce-slow 1s ease-in-out infinite;
   }
 
   .animate-spin-reverse {
