@@ -20,7 +20,7 @@ export function InsightsSection() {
 
       <div className=" px-4 sm:px-6  relative z-10">
         {/* Header */}
-        <div className="px-4 pb-3 sm:px-6 lg:px-16  animate-fade-in">
+        <div className="px-4 pb-8 sm:px-6 lg:px-16  animate-fade-in">
           <HeaderTitle
                      
                       colouredHeader="Insights"
@@ -31,10 +31,10 @@ export function InsightsSection() {
                   </div>
 
         {/* Featured Article */}
-        <div className="max-w-6xl mx-auto px-6 lg:px-8 space-y-24">
+        <div className="max-w-6xl mx-auto px-2 lg:px-2 space-y-12">
   {insights.map((insight) => (
     <SectionReveal key={insight.id}>
-      <article className="group grid lg:grid-cols-12 gap-12 items-start">
+      <article className="group grid rounded-md shadow-xs shadow-red-200 p-4 lg:grid-cols-12 gap-12 items-start">
         {/* Image */}
         <div className="lg:col-span-5 overflow-hidden rounded-2xl bg-slate-100">
           <Image
@@ -49,7 +49,7 @@ export function InsightsSection() {
         {/* Content */}
         <div className="lg:col-span-7 pt-2">
           {/* Tag */}
-          <span className="inline-block text-xs uppercase tracking-widest text-primary mb-4">
+          <span className="inline-block  text-xs uppercase tracking-widest text-primary mb-4">
             {insight.tagline}
           </span>
 
@@ -61,7 +61,7 @@ export function InsightsSection() {
           </Link>
 
           {/* Excerpt */}
-          <p className="text-lg text-secondary/70 leading-relaxed max-w-2xl mb-8">
+          <p className="text-sm md:text-base text-justify text-secondary/70 leading-relaxed max-w-2xl mb-8">
             {insight.excerpt}
           </p>
 

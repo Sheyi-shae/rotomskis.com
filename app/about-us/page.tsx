@@ -6,7 +6,7 @@ import React from 'react'
 
 export default function page() {
   return (
-      <div>
+      <div className='pb-10'>
           <AboutUsHero />
       <WhyWeExistSection />
        <Principles />

@@ -1,7 +1,7 @@
 export const insightsData =[
     {
         "id": 0,
-        "title": "The RJV Purpose_ Living From Inspiration, Not Despair",
+        "title": "The RJV Purpose - Living From Inspiration, Not Despair",
         "excerpt": "As a business, Rotomskis Joint Ventures (RJV) exists to empower company owners to realize ambitious growth strategies and to create space for exceptional people to fully express their potential. We do not simply advise. We accompany. From the first idea to true ownership.",
         "tagline": "RJV Purpose",
         "image": "/img/insight1.jpg",
@@ -75,7 +75,7 @@ And we are here to build that future together.</p>
     },
     {
         "id": 1,
-        "title": "RJV Manifesto_ To Those With Us In Eternity",
+        "title": "RJV Manifesto - To Those With Us In Eternity",
         "excerpt": "We believe the world does not suffer from a lack of ambition, but from systems that reward the wrong kind of value. For decades, global business has been shaped by low-value extraction, short-term optimization, and disconnected supply chains that enrich a few while hollowing out communities, craftsmanship, and meaning. This model is not broken by accident — it is broken by design.",
         "tagline": "RJV Manifesto",
         "image": "/img/insight2.jpg",
@@ -119,7 +119,7 @@ At the individual level, we believe fulfillment comes from contributing meaningf
     },
     {
         "id": 2,
-        "title": "The Importance of Visionary Leadership_ Shaping the Future Through Legacy Enterprise",
+        "title": "The Importance of Visionary Leadership - Shaping the Future Through Legacy Enterprise",
         "excerpt": "At Rotomskis Joint Ventures (RJV), we believe that visionaries and mission-driven builders are the true drivers of sustainable success. These are leaders who remain deeply customer-oriented, execute ambitious ideas, and create products and systems that genuinely improve lives.",
         "tagline": "Importance of Visionary Leadership",
         "image": "/img/insight3.jpg",

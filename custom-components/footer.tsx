@@ -1,5 +1,6 @@
 import Image from "next/image"
 import { Mail, Phone, Linkedin } from "lucide-react"
+import Link from "next/link"
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
@@ -38,7 +39,7 @@ export function Footer() {
             {/* Contact details */}
             <div className="space-y-2 text-primary">
               <a
-                href="mailto:hello@strategicexpansion.com"
+                href="mailto:info@rotomskis.com"
                 className="flex items-center gap-3 text-sm text-tertiary/80 hover:text-primary transition-colors"
               >
                 <Mail size={16} />
@@ -61,11 +62,11 @@ export function Footer() {
             <h4 className="font-semibold mr-20 text-tertiary mb-4">
               Services
             </h4>
-            <ul className="space-y-3 text-sm text-tertiary/80">
-              <li>Strategy Consulting</li>
-              <li>Interim Management</li>
-              <li>Sales Outsourcing</li>
-              <li>Platform Engineering</li>
+            <ul className="space-y-3 z-20 flex flex-col text-sm text-tertiary/80">
+              <Link href="/how-we-work"><li>Strategy Consulting</li></Link>
+              <Link href="/how-we-work"><li>Interim Management</li></Link>
+              <Link href="/how-we-work"><li>Sales Outsourcing</li></Link>
+              <Link href="/how-we-work"><li>Platform Engineering</li></Link>
             </ul>
           </div>
 
@@ -80,13 +81,14 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-primary transition-colors">
+                <a   href="https://www.linkedin.com/in/augustinasrotomskis"
+                  target="_blank" className="hover:text-primary transition-colors">
                   LinkedIn
                 </a>
               </li>
              
               <li>
-                <a href="#" className="hover:text-primary transition-colors">
+                <a href="/connect" className="hover:text-primary transition-colors">
                   Contact
                 </a>
               </li>

@@ -1,143 +1,143 @@
-import React from 'react'
-import HeaderTitle from './header-title';
-import Image from 'next/image';
-import SectionReveal from './section-reveal';
+"use client"
 
+import Image from "next/image"
+import HeaderTitle from "./header-title"
+import SectionReveal from "./section-reveal"
 
 const services = [
   {
-    id: 0,
-   icon: "/img/work1.jpg",
-    title: 'Strategy Consulting',
-    tagline: 'Global Expansion & Market Entry',
-    description:
-      'We begin by clarifying direction before committing resources.This stage focuses on understanding where and how growth should happen — not in theory, but in relation to real market demand, competitive dynamics, and execution capacity.',
-    highlights: [
-      'Global expansion strategy and sequencing',
-      'Market entry architecture and demand validation',
-      'Go-to-market and distribution logic',
-      'Risk, capital, and control considerations',
-    ],
-    
-   conclusion:'The outcome is not a report, but a clear strategic frame that guides all subsequent decisions.'
-  },
-  {
     id: 1,
-    icon: "/img/work2.jpg",
-    title: ' Interim Management',
-    tagline: 'Commercial & Expansion Leadership',
+    icon: "/img/work1.jpg",
+    title: "Strategy Consulting",
+    tagline: "Global Expansion & Market Entry",
     description:
-      'Strategy only creates value when it is carried into execution.At this stage, we step into active leadership roles to ensure that expansion decisions are implemented coherently and responsibly.',
+      "We begin by clarifying direction before committing resources. This stage focuses on where and how growth should happen in relation to real demand, competitive pressure, and execution capacity.",
     highlights: [
-      'Interim commercial or expansion leadership',
-      'Alignment of teams, partners, and priorities',
-      'Hands-on decision-making under real conditions',
-      'Maintaining control as complexity increases',
+      "Expansion sequencing and market prioritisation",
+      "Demand validation and entry architecture",
+      "Go-to-market and distribution logic",
+      "Capital, risk, and control considerations",
     ],
-    conclusion:'This role bridges the gap between planning and reality — ensuring momentum without loss of direction.'
+    conclusion:
+      "The outcome is not a report, but a strategic frame that governs all subsequent decisions.",
   },
   {
     id: 2,
-   icon: "/img/work5.png",
-    title: 'Sales Outsourcing',
-    tagline: 'Global Sales Nodes & Partner Networks',
+    icon: "/img/work2.jpg",
+    title: "Interim Management",
+    tagline: "Commercial & Expansion Leadership",
     description:
-      'As expansion progresses, execution must scale without inflating internal structures.We design and operate distributed sales and partner models that extend reach while preserving strategic control.',
+      "Strategy creates value only when carried into execution. At this stage, we step into leadership roles to ensure expansion decisions are implemented coherently under real conditions.",
     highlights: [
-      'Building global sales nodes',
-      'Structuring partner and distributor networks',
-      'Aligning incentives, accountability, and reporting',
-      'Ensuring market feedback flows back into strategy',
+      "Interim commercial or expansion leadership",
+      "Team and partner alignment",
+      "Hands-on decision-making",
+      "Maintaining control as complexity increases",
     ],
-    conclusion:'The goal is scalable market access without operational overload'
-    },
-    {
-         id: 3,
-   icon: "/img/work3.jpg",
-    title: 'Platform Engineering',
-    tagline: 'Digital & Operational Platforms for Expansion',
+    conclusion:
+      "This phase bridges planning and reality without sacrificing strategic intent.",
+  },
+  {
+    id: 3,
+    icon: "/img/work5.png",
+    title: "Sales Outsourcing",
+    tagline: "Global Sales Nodes & Partner Networks",
     description:
-      'Sustainable growth requires systems that can carry complexity.At this stage, we design and implement digital and operational platforms that integrate strategy, sales, partners, and execution into a single operating environment.',
-
+      "As expansion scales, execution must grow without inflating internal structures. We design and operate distributed sales and partner models with clear accountability.",
     highlights: [
-      'Digital platforms supporting expansion and coordination',
-      'Operational systems for visibility and control',
-      'Process integration across markets and teams',
-      'Reducing dependency on ad-hoc decision-making',
+      "Global sales node design",
+      "Partner and distributor structures",
+      "Aligned incentives and reporting",
+      "Market feedback loops into strategy",
     ],
-    conclusion:'Platforms turn expansion from a series of projects into a repeatable capability'
-      
-  }
-];
-
+    conclusion:
+      "Scalable market access without operational overload.",
+  },
+  {
+    id: 4,
+    icon: "/img/work6.png",
+    title: "Platform Engineering",
+    tagline: "Digital & Operational Infrastructure",
+    description:
+      "Sustainable growth requires systems that can carry complexity. We design platforms that integrate strategy, sales, partners, and execution into a single operating environment.",
+    highlights: [
+      "Expansion-ready digital platforms",
+      "Operational visibility and control",
+      "Cross-market process integration",
+      "Reduced dependency on ad-hoc decisions",
+    ],
+    conclusion:
+      "Platforms turn expansion into a repeatable capability.",
+  },
+]
 
 export default function HowWeWork() {
   return (
-    <div className='mt-24'>
-      
-      <div className='max-w-7xl mx-auto px-6 lg:px-12 space-y-10'>
+    <section className="mt-28 pb-20">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <HeaderTitle
-      subHeader='How We Work'
-        subText='Our work follows a structured progression designed for companies facing complex global growth and expansion decisions. Each stage builds on the previous one, ensuring clarity, control, and long-term resilience.'
-        colouredHeader='Work'
-        header='How We'
+          header="How We"
+          colouredHeader="Work"
+          subHeader="How We Work"
+          subText="Our work follows a structured progression for companies facing complex global expansion decisions. Each stage builds clarity, control, and long-term resilience."
         />
 
-        <div className='animate-slide-in-up flex flex-col gap-10'>
-        
-        {services.map((service) => (
-        
-          <div key={service.id} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative  bg-gradient-to-br from-primary via-tertiary to-secondary border border-cyan-500/20 rounded-xl p-8 lg:p-12">
-             
-            <div className="relative">
-              <Image
-              src={service.icon}
-              alt=""
-              width={1500}
-              height={1500}
-              className='rounded-md shadow-rose-500 absolute w-full h-full object-cover'
-              />
-            </div>
-
-              <div className="col-span-2 relative z-10">
-                <div className="inline-flex items-center gap-2 mb-6">
-                  <div className="h-1 w-8 bg-gradient-to-r from-secondary/20 to-transparent" />
-                  <span className="text-xs uppercase tracking-widest text-slate-200">{service.tagline}</span>
+        <div className="mt-24 space-y-32">
+          {services.map((service, index) => (
+            <SectionReveal key={service.id}>
+              <div className="grid lg:grid-cols-12 gap-16 items-start">
+                {/* Stage number */}
+                <div className="lg:col-span-1 hidden lg:block">
+                  <span className="text-sm font-semibold text-primary">
+                    0{index + 1}
+                  </span>
                 </div>
 
-                <h3 className="text-4xl lg:text-5xl font-bold mb-6 text-white">
-                  {service.title}
-                </h3>
+                {/* Image */}
+                <div className="lg:col-span-4 rounded-2xl overflow-hidden bg-slate-100">
+                  <Image
+                    src={service.icon}
+                    alt={service.title}
+                    width={600}
+                    height={400}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
 
-                <p className="text-lg text-slate-50 leading-relaxed mb-8">
-                  {service.description}
-                </p>
+                {/* Content */}
+                <div className="lg:col-span-7">
+                  <span className="block text-xs uppercase tracking-widest text-primary mb-4">
+                    {service.tagline}
+                  </span>
 
-                <div className="space-y-4 mb-10">
-                  {service.highlights.map((highlight, i) => (
-                    <div key={i} className="flex items-start gap-4 group">
-                      <div className="flex-shrink-0 mt-1">
-                        <div
-                          className="w-2 h-2 rounded-full bg-slate-50 transition-all duration-300 group-hover:scale-150"
-                       
-                        />
-                      </div>
-                      <p className="text-slate-50 leading-relaxed group-hover:text-[#eef2f5] transition-colors duration-300">
-                        {highlight}
-                      </p>
-                    </div>
-                  ))}
-            </div>
-            <p className="text-lg text-slate-50 leading-relaxed mb-8">
-                  {service.conclusion}
-                </p>
+                  <h3 className="text-3xl lg:text-4xl font-bold text-secondary mb-6">
+                    {service.title}
+                  </h3>
 
+                  <p className=" text-base md:text-lg text-justify text-secondary/70 leading-relaxed mb-8 max-w-2xl">
+                    {service.description}
+                  </p>
+
+                  <ul className="space-y-3 mb-8">
+                    {service.highlights.map((item, i) => (
+                      <li key={i} className="flex gap-3">
+                        <span className="mt-2 h-1.5 w-1.5 rounded-full bg-primary" />
+                        <span className="text-secondary leading-relaxed">
+                          {item}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <p className="text-secondary font-medium leading-relaxed max-w-2xl">
+                    {service.conclusion}
+                  </p>
+                </div>
               </div>
-            </div>
-    
-        ))}
+            </SectionReveal>
+          ))}
         </div>
       </div>
-      
-      </div>
-)}
+    </section>
+  )
+}

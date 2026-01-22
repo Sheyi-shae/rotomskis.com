@@ -49,7 +49,7 @@ export function ConnectSection() {
               <div className="p-12 lg:p-16 flex flex-col justify-center">
                 <div className="mb-6">
                   <h2 className="text-4xl lg:text-5xl font-bold text-secondary mb-4 text-balance">
-                    Let's Connect on LinkedIn
+                    Let&#39;s Connect on LinkedIn
                   </h2>
                   <p className="text-base text-secondary/70 leading-relaxed text-balance">
                     Join our growing community of business strategists and export professionals navigating global
@@ -148,7 +148,7 @@ export function ConnectSection() {
         {/* Secondary CTA */}
         <div className="mt-16 text-center animate-fade-in" style={{ animationDelay: "0.5s" }}>
           <p className="text-secondary/70 mb-6">
-            Can't connect right now? No problem. Let's stay in touch another way.
+            Can&#39;t connect right now? No problem. Let&#39;s stay in touch another way.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
