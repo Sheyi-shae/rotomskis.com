@@ -2,167 +2,152 @@
 
 import { Linkedin, ArrowRight, Globe, Briefcase, TrendingUp } from "lucide-react"
 import Image from "next/image"
-import { useState, useEffect } from "react"
+import { useInView } from "framer-motion"
+import { useRef } from "react"
+import Link from "next/link"
+
+const benefits = [
+  {
+    icon: Globe,
+    title: "Global Network",
+    description: "Access to international business strategists and market experts",
+  },
+  {
+    icon: Briefcase,
+    title: "Exclusive Insights",
+    description: "Weekly thinking on market entry, expansion, and execution",
+  },
+  {
+    icon: TrendingUp,
+    title: "Growth Opportunities",
+    description: "Real partnership and expansion opportunities—not noise",
+  },
+]
 
 export function ConnectSection() {
-  const [isVisible, setIsVisible] = useState(false)
-
-  useEffect(() => {
-    const timer = setTimeout(() => setIsVisible(true), 100)
-    return () => clearTimeout(timer)
-  }, [])
-
-  const benefits = [
-    {
-      icon: <Globe size={24} />,
-      title: "Global Network",
-      description: "Access to international business strategists and market experts",
-    },
-    {
-      icon: <Briefcase size={24} />,
-      title: "Exclusive Insights",
-      description: "Weekly articles on market expansion, strategy, and global trends",
-    },
-    {
-      icon: <TrendingUp size={24} />,
-      title: "Growth Opportunities",
-      description: "Real-time opportunities for partnerships and business expansion",
-    },
-  ]
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   return (
-    <section id="connect" className="py-24 bg-gradient-to-b from-white to-tertiary/30 relative overflow-hidden">
-      {/* Decorative elements */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl -translate-y-1/2" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-secondary/5 rounded-full blur-3xl translate-y-1/2" />
-
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Main Connect Card */}
+    <section
+      ref={ref}
+      id="connect"
+      className="relative overflow-hidden mt-16 pb-20 bg-gradient-to-b from-white to-tertiary/20"
+    >
+      {/* Ambient background */}
+    
+      <div className="relative z-10 max-w-6xl mx-auto px-6">
+        {/* Main Card */}
         <div
-          className={`mb-16 transition-all duration-1000 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          className={`grid lg:grid-cols-2 rounded-3xl border bg-white overflow-hidden transition-all duration-700 ${
+            isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
           }`}
         >
-          <div className="rounded-3xl border border-gray-100 bg-white overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300">
-            <div className="grid lg:grid-cols-2 gap-0">
-              {/* Left - Content */}
-              <div className="p-12 lg:p-16 flex flex-col justify-center">
-                <div className="mb-6">
-                  <h2 className="text-4xl lg:text-5xl font-bold text-secondary mb-4 text-balance">
-                    Let&#39;s Connect on LinkedIn
-                  </h2>
-                  <p className="text-base text-secondary/70 leading-relaxed text-balance">
-                    Join our growing community of business strategists and export professionals navigating global
-                    markets. Get insights, opportunities, and expert guidance delivered directly to your network.
-                  </p>
-                </div>
+          {/* Content */}
+          <div className="p-5 lg:p-10 flex flex-col justify-center">
+            <h2 className="text-4xl lg:text-5xl font-bold text-secondary mb-6 leading-tight">
+              Let’s Connect on LinkedIn
+            </h2>
 
-                {/* Stats */}
-                <div className="grid grid-cols-3 gap-4 my-8 py-8 border-y border-gray-200">
-                  {[
-                    { number: "500+", label: "Connected Professionals" },
-                    { number: "40+", label: "Markets Covered" },
-                    { number: "50k+", label: "Monthly Reach" },
-                  ].map((stat, i) => (
-                    <div key={i} className="animate-fade-in" style={{ animationDelay: `${i * 0.1}s` }}>
-                      <div className="text-2xl font-bold text-primary mb-1">{stat.number}</div>
-                      <div className="text-sm text-secondary/60">{stat.label}</div>
-                    </div>
-                  ))}
-                </div>
+            <p className="text-secondary/70 max-w-xl mb-10">
+              A focused network for leaders navigating international markets,
+              expansion strategy, and execution under real conditions.
+            </p>
 
-                {/* CTA Button */}
-                <a
-                  href="https://www.linkedin.com/in/augustinasrotomskis"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-3 bg-gradient-to-r from-primary to-secondary text-white px-8 py-4 rounded-2xl font-semibold hover:shadow-lg hover:shadow-primary/40 transition-all duration-300 hover:-translate-y-1 w-fit group animate-fade-in"
-                  style={{ animationDelay: "0.3s" }}
-                >
-                  <Linkedin size={24} />
-                  <span>Connect with Me</span>
-                  <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-                </a>
-
-                {/* Trust indicators */}
-                <p className="text-sm text-secondary/60 mt-8 flex items-center gap-2">
-                  <span className="w-2 h-2 bg-primary rounded-full" />
-                  Over 5 years of strategic expansion expertise
-                </p>
-              </div>
-
-              {/* Right - Visual */}
-              <div className="bg-gradient-to-br relative from-primary/10 to-secondary/10 p-12 lg:p-16 flex items-center justify-center">
-               {/* bg - image */}
-               
-                              <Image src="/img/augustinas.png" alt="Connect" width={500}
-                                  height={500}
-                                  className="absolute top-0 left-0 w-full opacity-25 h-full object-cover" />
-               <div className="w-full h-full flex flex-col items-center justify-center space-y-8">
-                  {/* LinkedIn Icon Animation */}
-                  <div className="relative z-10">
-                    <div className="w-32 h-32 bg-primary rounded-2xl flex items-center justify-center shadow-lg animate-float">
-                      <Linkedin size={64} className="text-white" />
-                    </div>
-                    <div className="absolute inset-0 w-32 h-32 border-2 border-primary rounded-2xl animate-pulse-glow opacity-0" />
+            {/* Stats */}
+            <div className="grid grid-cols-3 gap-6 mb-10">
+              {[
+                { value: "500+", label: "Professionals" },
+                { value: "40+", label: "Markets" },
+                { value: "50k+", label: "Monthly Reach" },
+              ].map((item, i) => (
+                <div key={i}>
+                  <div className="text-2xl font-bold text-primary">
+                    {item.value}
                   </div>
-
-                  {/* Connection Pulse Animation */}
-                  <div className="text-center">
-                    <p className="text-sm font-semibold text-primary mb-4">Building Global Connections</p>
-                    <div className="flex items-center justify-center gap-2">
-                      <div className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-                      <div
-                        className="w-2 h-2 bg-primary rounded-full animate-pulse"
-                        style={{ animationDelay: "0.2s" }}
-                      />
-                      <div
-                        className="w-2 h-2 bg-primary rounded-full animate-pulse"
-                        style={{ animationDelay: "0.4s" }}
-                      />
-                    </div>
+                  <div className="text-sm text-secondary/60">
+                    {item.label}
                   </div>
                 </div>
+              ))}
+            </div>
+
+            {/* Primary CTA */}
+            <a
+              href="https://www.linkedin.com/in/augustinasrotomskis"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 w-fit rounded-xl bg-gradient-to-r from-primary to-secondary px-8 py-4 text-white font-semibold transition-all hover:shadow-lg hover:shadow-primary/30 hover:-translate-y-0.5"
+            >
+              <Linkedin size={22} />
+              Connect on LinkedIn
+              <ArrowRight size={18} />
+            </a>
+
+            <p className="mt-6 text-sm text-secondary/60">
+              Trusted by operators with 5+ years of global expansion experience
+            </p>
+          </div>
+
+          {/* Visual */}
+          <div className="relative flex items-center justify-center bg-gradient-to-br from-primary/10 to-secondary/10">
+            <Image
+              src="/img/augustinas.png"
+              alt="Global Strategy"
+              fill
+              className="object-cover opacity-30"
+            />
+            <div className="relative z-10 flex flex-col items-center gap-6">
+              <div className="w-28 h-28 rounded-2xl bg-primary flex items-center justify-center shadow-xl">
+                <Linkedin size={56} className="text-white" />
               </div>
+              <p className="text-sm font-semibold text-primary">
+                Building meaningful global connections
+              </p>
             </div>
           </div>
         </div>
 
-        {/* Benefits Grid */}
-        <div className="grid md:grid-cols-3 gap-6">
+        {/* Benefits */}
+        <div className="grid md:grid-cols-3 gap-8 mt-20">
           {benefits.map((benefit, i) => (
             <div
               key={i}
-              className="p-8 bg-white rounded-2xl border border-gray-100 hover:border-primary/20 hover:shadow-lg transition-all duration-300 animate-slide-in-up group"
-              style={{ animationDelay: `${(i + 1) * 0.1}s` }}
+              className={`rounded-2xl border bg-white p-8 transition-all duration-500 ${
+                isInView
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-6"
+              }`}
+              style={{ transitionDelay: `${i * 80}ms` }}
             >
-              {/* <div className="p-4 bg-primary/10 rounded-lg w-fit mb-4 group-hover:scale-110 group-hover:bg-primary/20 transition-all">
-                <div className="text-primary">{benefit.icon}</div>
-              </div> */}
-              <h3 className="text-xl font-bold text-secondary mb-3">{benefit.title}</h3>
-              <p className="text-secondary/70 leading-relaxed">{benefit.description}</p>
+              <h3 className="text-lg font-semibold text-secondary mb-2">
+                {benefit.title}
+              </h3>
+              <p className="text-secondary/70 text-sm leading-relaxed">
+                {benefit.description}
+              </p>
             </div>
           ))}
         </div>
 
         {/* Secondary CTA */}
-        <div className="mt-16 text-center animate-fade-in" style={{ animationDelay: "0.5s" }}>
+        <div className="mt-20 text-center">
           <p className="text-secondary/70 mb-6">
-            Can&#39;t connect right now? No problem. Let&#39;s stay in touch another way.
+            Prefer a different channel?
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="flex justify-center gap-6">
             <a
-              href="mailto:info@rjvpartners.com"
-              className="px-6 py-3 rounded-lg border-2 border-primary text-primary font-semibold hover:bg-primary hover:text-white transition-all duration-300"
+              href="mailto:info@rotomskis.com"
+              className="px-6 py-3 border-2 border-primary rounded-lg font-semibold text-primary hover:bg-primary hover:text-white transition"
             >
               Contact via Email
             </a>
-            <a
-              href="https://verslas.blog/" target="_blank"
-              className="px-6 py-3 rounded-lg text-primary font-semibold hover:text-secondary transition-colors"
+            <Link
+              href="/insights"
+              className="px-6 py-3 font-semibold text-primary hover:text-secondary transition"
             >
-              Read Latest Insights
-            </a>
+              Read Insights
+            </Link>
           </div>
         </div>
       </div>

@@ -47,7 +47,7 @@ export function Footer() {
               </a>
 
               <a
-                href="#"
+               href="https://www.linkedin.com/in/augustinasrotomskis"
                 target="_blank"
                 className="flex items-center gap-3 text-sm text-tertiary/80 hover:text-primary transition-colors"
               >

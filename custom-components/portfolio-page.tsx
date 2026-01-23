@@ -20,7 +20,7 @@ export function PortfolioPage() {
   ]
 
   return (
-    <section id="portfolio" className="mt-26 bg-white relative overflow-hidden">
+    <section id="portfolio" className="mt-26 relative overflow-hidden">
       <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary/5 rounded-full blur-3xl" />
       <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-secondary/5 rounded-full blur-3xl" />
 
