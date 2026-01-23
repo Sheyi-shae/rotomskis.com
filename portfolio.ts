@@ -67,7 +67,7 @@ cycles.
   },
   {
     id: 2,
-    title: 'Structural repositioning after cost-based collapse',
+    title: 'Structural Repositioning After Cost-Based Collapse',
     category: 'Strategy Consulting',
      categoryId:'strategy',
     description: 'A long-established garment manufacturing company had operated for years under a price-leadership model. Its reputation was built on reliable quality and competitive pricing, making it a known supplier in its segment',
