@@ -15,7 +15,7 @@ export default function HeaderTitle({ subHeader, header, colouredHeader, subText
   </div>}
 </div>
      <SectionReveal>
-          <h2 className="text-4xl lg:text-5xl font-bold leading-tight mb-1 text-black">
+          <h2 className="text-3xl lg:text-5xl pb-2 font-bold leading-tight mb-1 text-black">
             <span className="">{header}</span>
             <span className=" text-[#800020] pl-2">{colouredHeader}</span>
           </h2>

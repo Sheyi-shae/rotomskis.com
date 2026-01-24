@@ -2,9 +2,12 @@ import React from 'react'
 
 export default function About2({isVisible}: {isVisible: boolean}) {
   return (
-      <div className='grid lg:grid-cols-2 pt-8 gap-6 items-center ' >
+    <div className='grid lg:grid-cols-2 pb-16 px-0 md:px-14 pt-8 gap-6 items-center ' >
+       {/* Ambient background */}
+      <div className="absolute  left-[-20%] w-[36rem] h-[36rem] bg-primary/5 rounded-full blur-3xl" />
+       <div className="absolute top-[-25%] left-[-20%] w-[40rem] h-[40rem] bg-secondary/5 rounded-full blur-3xl" />
           {/* right section */}
-          <div className={`p-2 md:p-4 shadow-2xl rounded-lg overflow-hidden bg-muted/75 ${isVisible ? 'animate-slide-in-right' : 'opacity-0'}`}>
+          <div className={`p-2 md:p-4 shadow-2xl rounded-xl overflow-hidden bg-muted/75 ${isVisible ? 'animate-slide-in-right' : 'opacity-0'}`}>
               <h3 className="text-xl lg:text-2xl flex justify-center font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary leading-tight mb-6 text-balance">
   Why Integration Becomes Necessary
             </h3>
