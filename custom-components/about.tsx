@@ -30,8 +30,7 @@ export function WhyWeExistSection() {
       <div className="absolute  left-[-20%] w-[36rem] h-[36rem] bg-primary/5 rounded-full blur-3xl" />
        <div className="absolute top-[-25%] left-[-20%] w-[40rem] h-[40rem] bg-secondary/5 rounded-full blur-3xl" />
 
-      <div className="absolute bottom-[-30%] right-[-20%] w-[36rem] h-[36rem] bg-secondary/5 rounded-full blur-3xl" />
-
+    
       <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
         <div className="grid lg:grid-cols-12 gap-20 items-center">
 
