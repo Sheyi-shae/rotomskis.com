@@ -3,7 +3,7 @@ import React from 'react'
 
 export default function page() {
   return (
-    <div className='mt-30 pb-30'>
+    <div className='mt-38 pb-38'>
       <PortfolioPage/>
     </div>
   )

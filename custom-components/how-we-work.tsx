@@ -23,7 +23,7 @@ const services = [
   },
   {
     id: 2,
-    icon: "/img/work2.jpg",
+    icon: "/img/work7.jpg",
     title: "Interim Management",
     tagline: "Commercial & Expansion Leadership",
     description:
@@ -73,7 +73,7 @@ const services = [
 
 export default function HowWeWork() {
   return (
-    <section className="mt-28 pb-20">
+    <section className="mt-28 pb-38">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <HeaderTitle
           header="How We"
@@ -82,61 +82,73 @@ export default function HowWeWork() {
           subText="Our work follows a structured progression for companies facing complex global expansion decisions. Each stage builds clarity, control, and long-term resilience."
         />
 
-        <div className="mt-24 space-y-32">
-          {services.map((service, index) => (
-            <SectionReveal key={service.id}>
-              <div className="grid lg:grid-cols-12 gap-16 items-start">
-                {/* Stage number */}
-                <div className="lg:col-span-1 hidden lg:block">
-                  <span className="text-sm font-semibold text-primary">
-                    0{index + 1}
+       <div className="mt-20 space-y-28">
+  {services.map((service) => (
+    <SectionReveal key={service.id}>
+      <div className="relative rounded-3xl bg-white/70 backdrop-blur-xl border border-primary/10 shadow-[0_20px_60px_-20px_rgba(0,0,0,0.15)] p-6 lg:p-12">
+        
+        {/* Soft ambient glow */}
+        <div className="absolute inset-0 -z-10 rounded-3xl bg-gradient-to-br from-primary/10 via-transparent to-secondary/10" />
+
+        <div className="grid lg:grid-cols-12 gap-2 items-start">
+          
+          {/* Image */}
+          <div className="lg:col-span-4">
+            <div className="relative rounded-2xl overflow-hidden shadow-xl group">
+              <Image
+                src={service.icon}
+                alt={service.title}
+                width={600}
+                height={800}
+                className="w-full h-full md:h-120 object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent" />
+            </div>
+          </div>
+
+          {/* Content */}
+          <div className="lg:col-span-7 lg:col-start-6">
+            {/* Tagline */}
+            <div className="inline-flex items-center gap-3 mb-6">
+              <span className="h-px w-10 bg-primary/40" />
+              <span className="text-xs uppercase tracking-widest text-primary">
+                {service.tagline}
+              </span>
+            </div>
+
+            {/* Title */}
+            <h3 className="text-3xl lg:text-4xl font-semibold text-secondary leading-tight mb-6">
+              {service.title}
+            </h3>
+
+            {/* Description */}
+            <p className="text-sm md:text-base text-justify text-secondary/80 leading-relaxed mb-10 max-w-2xl">
+              {service.description}
+            </p>
+
+            {/* Highlights */}
+            <ul className="grid sm:grid-cols-2 gap-x-10 gap-y-4 mb-10">
+              {service.highlights.map((item, i) => (
+                <li key={i} className="flex gap-3 items-start">
+                  <span className="mt-2 h-2 w-2 rounded-full bg-primary/70 flex-shrink-0" />
+                  <span className="text-secondary/80 text-xs md:text-sm leading-relaxed">
+                    {item}
                   </span>
-                </div>
+                </li>
+              ))}
+            </ul>
 
-                {/* Image */}
-                <div className="lg:col-span-4 rounded-2xl overflow-hidden bg-slate-100">
-                  <Image
-                    src={service.icon}
-                    alt={service.title}
-                    width={600}
-                    height={400}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-
-                {/* Content */}
-                <div className="lg:col-span-7">
-                  <span className="block text-xs uppercase tracking-widest text-primary mb-4">
-                    {service.tagline}
-                  </span>
-
-                  <h3 className="text-3xl lg:text-4xl font-bold text-secondary mb-6">
-                    {service.title}
-                  </h3>
-
-                  <p className=" text-base md:text-lg text-justify text-secondary/70 leading-relaxed mb-8 max-w-2xl">
-                    {service.description}
-                  </p>
-
-                  <ul className="space-y-3 mb-8">
-                    {service.highlights.map((item, i) => (
-                      <li key={i} className="flex gap-3">
-                        <span className="mt-2 h-1.5 w-1.5 rounded-full bg-primary" />
-                        <span className="text-secondary leading-relaxed">
-                          {item}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  <p className="text-secondary font-medium leading-relaxed max-w-2xl">
-                    {service.conclusion}
-                  </p>
-                </div>
-              </div>
-            </SectionReveal>
-          ))}
+            {/* Conclusion */}
+            <p className="text-secondary font-medium leading-relaxed max-w-2xl border-l-2 border-primary/40 pl-6">
+              {service.conclusion}
+            </p>
+          </div>
         </div>
+      </div>
+    </SectionReveal>
+  ))}
+</div>
+
       </div>
     </section>
   )

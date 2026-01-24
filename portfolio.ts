@@ -673,8 +673,9 @@ more resilient commercial structure, less exposed to single-channel disruption.
                                 
                                 {
     id: 12,
-    title: 'New Solution Help Company Blitzscale',
+    title: 'New Solution Helped Company Blitzscale',
     category: 'Platform Engineering',
+    categoryId:'engineering',
     description: 'A specialized spine and rehabilitation clinic operated with strong clinical expertise and a growing patient base. While treatment quality was high, internal knowledge transfer and training consistency depended heavily on individual practitioners and informal processes.',
     result: 'Revenues soared by 87 %',
     tags: ['Platform Engineering','clinic'],

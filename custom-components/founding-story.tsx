@@ -97,7 +97,7 @@ export function FoundingStorySection() {
             <div className="sticky top-32 space-y-8">
               <div className="relative">
                 <div className="absolute left-1/2 top-0 -translate-x-1/2 h-full w-px bg-gradient-to-b from-[#800020]/60 via-[#800020]/30 to-transparent" />
-                <div className="space-y-10  relative">
+                <div className="space-y-15  relative">
                   {storyPoints.map((_, i) => (
                     <div
                       key={i}
@@ -108,13 +108,13 @@ export function FoundingStorySection() {
                       }`}
                     >
                       <div
-                        className={`h-3 w-3 rounded-full transition-all duration-500 ${
+                        className={`h-3 w-3  rounded-full transition-all duration-500 ${
                           visibleIndices.includes(i)
                             ? 'bg-[#800020] shadow-lg shadow-[#800020]/50'
                             : 'bg-[#800020]/40'
                         }`}
                       />
-                      {i < storyPoints.length - 1 && (
+                      {i < storyPoints.length  - 1 && (
                         <div className="h-12 w-px bg-gradient-to-b from-[#800020]/40 to-transparent" />
                       )}
                     </div>

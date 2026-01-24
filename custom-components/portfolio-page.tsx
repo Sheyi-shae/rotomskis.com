@@ -11,19 +11,11 @@ export function PortfolioPage() {
   const [activeCategory, setActiveCategory] = useState<"all" | "strategy" | "market" | "interim" | "engineering">("all")
 
 
-  const categories = [
-    { id: "all", label: "All Projects" },
-    { id: "strategy", label: "Strategy Consulting" },
-    { id: "market", label: "Market Entry" },
-    { id: "interim", label: "Interim Management" },
-    {id:'engineering', label:'PlatformEngineering'}
-  ]
+
 
   return (
     <section id="portfolio" className="mt-26 relative overflow-hidden">
-      <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary/5 rounded-full blur-3xl" />
-      <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-secondary/5 rounded-full blur-3xl" />
-
+      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
       

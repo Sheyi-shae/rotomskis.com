@@ -10,17 +10,17 @@ const benefits = [
   {
     icon: Globe,
     title: "Global Network",
-    description: "Access to international business strategists and market experts",
+    description: "Access to international entrepreneurs and scaling experts",
   },
   {
     icon: Briefcase,
     title: "Exclusive Insights",
-    description: "Weekly thinking on market entry, expansion, and execution",
+    description: "Weekly thinking on market entry and global expansion",
   },
   {
     icon: TrendingUp,
-    title: "Growth Opportunities",
-    description: "Real partnership and expansion opportunities—not noise",
+    title: "Investment Opportunities",
+    description: "Connection to investors and potilicians looking for new ventures",
   },
 ]
 
@@ -57,8 +57,8 @@ export function ConnectSection() {
             {/* Stats */}
             <div className="grid grid-cols-3 gap-6 mb-10">
               {[
-                { value: "500+", label: "Professionals" },
-                { value: "40+", label: "Markets" },
+                { value: "2000+", label: "Professionals" },
+                { value: "60+", label: "Countries" },
                 { value: "50k+", label: "Monthly Reach" },
               ].map((item, i) => (
                 <div key={i}>
@@ -85,7 +85,7 @@ export function ConnectSection() {
             </a>
 
             <p className="mt-6 text-sm text-secondary/60">
-              Trusted by operators with 5+ years of global expansion experience
+             Trusted by global founders with 8+ years of global expansion experience
             </p>
           </div>
 

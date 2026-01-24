@@ -34,7 +34,7 @@ export function InsightsSection() {
         <div className="max-w-6xl mx-auto px-2 lg:px-2 space-y-12">
   {insights.map((insight) => (
     <SectionReveal key={insight.id}>
-      <article className="group grid rounded-md shadow-xs shadow-red-200 p-4 lg:grid-cols-12 gap-12 items-start">
+      <article className="group grid rounded-md  p-4 lg:grid-cols-12 gap-12 items-start">
         {/* Image */}
         <div className="lg:col-span-5 overflow-hidden rounded-2xl bg-slate-100">
           <Image

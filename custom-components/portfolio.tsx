@@ -8,69 +8,13 @@ import SectionReveal from "./section-reveal"
 import Link from "next/link"
 
 export function PortfolioSection() {
-  const [activeCategory, setActiveCategory] = useState<"all" | "strategy" | "market" | "interim" | "engineering">("all")
+  const [activeCategory, setActiveCategory] = useState< "strategy" | "market" | "interim" | "engineering">("strategy")
 
-  // const projects = [
-  //   {
-  //     id: 1,
-  //     title: "Baltic Wood Exports Expansion",
-  //     category: "export",
-  //     description: "Successfully launched Baltic premium wood products into Scandinavian and Central European markets",
-  //     result: "300% revenue increase",
-  //     tags: ["Export", "EU Markets", "B2B"],
-  //     image: "url('/wooden-products-factory.jpg')",
-  //   },
-  //   {
-  //     id: 2,
-  //     title: "Tech Startup Global Launch",
-  //     category: "market",
-  //     description: "Navigated market entry strategy for Lithuanian software company targeting US and Asian markets",
-  //     result: "15M valuation increase",
-  //     tags: ["SaaS", "Market Entry", "Growth"],
-  //     image: "url('/technology-startup-office.jpg')",
-  //   },
-  //   {
-  //     id: 3,
-  //     title: "Manufacturing Sector Transformation",
-  //     category: "tech",
-  //     description: "Modernized export processes and integrated digital solutions for traditional manufacturer",
-  //     result: "50% cost reduction",
-  //     tags: ["Operations", "Digitization", "Efficiency"],
-  //     image: "url('/manufacturing-facility-production.jpg')",
-  //   },
-  //   {
-  //     id: 4,
-  //     title: "Food & Beverage International Brand",
-  //     category: "export",
-  //     description: "Created distribution network across 8 European countries for premium Lithuanian spirits",
-  //     result: "250% market growth",
-  //     tags: ["Food & Beverage", "Distribution", "Branding"],
-  //     image: "url('/premium-beverage-products.jpg')",
-  //   },
-  //   {
-  //     id: 5,
-  //     title: "Enterprise B2B Partnership Model",
-  //     category: "market",
-  //     description: "Established strategic partnerships and supply chain for major industrial component manufacturer",
-  //     result: "€2.5M annual contracts",
-  //     tags: ["B2B", "Partnerships", "Supply Chain"],
-  //     image: "url('/industrial-machinery.png')",
-  //   },
-  //   {
-  //     id: 6,
-  //     title: "eCommerce Global Fulfillment",
-  //     category: "tech",
-  //     description: "Built international logistics and fulfillment infrastructure for growing eCommerce platform",
-  //     result: "12x customer growth",
-  //     tags: ["eCommerce", "Logistics", "Scale"],
-  //     image: "url('/ecommerce-warehouse-logistics.jpg')",
-  //   },
-  // ]
+ 
 
-  const filtered = activeCategory === "all" ? portfolioProjects : portfolioProjects.filter((p) => p.categoryId === activeCategory)
+  const filtered = portfolioProjects.filter((p) => p.categoryId === activeCategory)
 
   const categories = [
-    { id: "all", label: "All Projects" },
     { id: "strategy", label: "Strategy Consulting" },
     { id: "market", label: "Market Entry" },
     { id: "interim", label: "Interim Management" },
@@ -78,16 +22,14 @@ export function PortfolioSection() {
   ]
 
   return (
-    <section id="portfolio" className="pt-12 bg-white relative overflow-hidden">
-      <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary/5 rounded-full blur-3xl" />
-      <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-secondary/5 rounded-full blur-3xl" />
-
+    <section id="portfolio" className="py-12 mt-8 bg-white relative overflow-hidden">
+ 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <HeaderTitle
           subHeader="My Portfolio"
-          header="Selected work from"
-          colouredHeader=" applied strategy"
+          header="Applied strategy in complex"
+          colouredHeader=" market transitions"
           subText="Real success stories from businesses we've helped expand globally"
               />
 
