@@ -25,8 +25,11 @@ export function ArticleAuthor() {
             {/* Content */}
             <div className="flex-1">
               <h3 className="text-2xl font-bold text-secondary mb-1">Augustinas Rotomskis</h3>
-              <p className="text-primary font-semibold mb-4">Business Strategist & Export Professional</p>
-              <p className="text-secondary/70 leading-relaxed mb-6">With 10+ years of experience in global market expansion, Aurelijus specializes in helping Lithuanian businesses scale internationally.</p>
+              <p className="text-primary font-semibold mb-4">Global Strategic Integrator</p>
+              <p className="text-secondary/70 leading-relaxed mb-6">
+               He has 10+ of scaling businesses globally. He designs and deploys national distribution systems by embedding them into a single accountable operating model. The approach has been validated across fragmented teams. He is currently systematising his approach into a global methodology
+
+              </p>
 
               {/* Social Links */}
               <div className="flex gap-3">

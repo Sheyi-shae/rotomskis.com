@@ -33,7 +33,7 @@ export function Footer() {
 
             <p className="text-tertiary/80 max-w-md leading-relaxed text-justify">
               Connecting product-first companies with high-growth markets across
-              the Anglosphere, DACH region, and Africa.
+              the Anglosphere, EU and Africa.
             </p>
 
             {/* Contact details */}
@@ -109,9 +109,9 @@ export function Footer() {
             <a href="#" className="hover:text-primary transition-colors">
               Terms
             </a>
-            <a href="#" className="hover:text-primary transition-colors">
-              Cookies
-            </a>
+            <Link href="/scam-warranty" className="hover:text-primary transition-colors">
+             Scam Warning
+            </Link>
           </div>
         </div>
       </div>

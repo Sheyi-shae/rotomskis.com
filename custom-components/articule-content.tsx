@@ -6,7 +6,7 @@ interface ArticleContentProps {
 
 export function ArticleContent({ content }: ArticleContentProps) {
   return (
-    <article className="prose  prose-lg max-w-none text-secondary animate-fade-in">
+    <article className="">
       <style>{`
         .prose h2 {
           font-size: 2rem;

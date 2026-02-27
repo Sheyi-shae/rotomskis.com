@@ -16,7 +16,7 @@ const services = [
       'Market validation and entry strategy',
       'Strategic partner selection and vetting',
       'Distribution network design',
-      'Execution across Anglosphere, DACH, and Africa',
+      'Execution across Anglosphere, EU, and Africa',
     ],
     color: '#0891b2',
     metrics: ['15+', 'Markets', '€450M+', 'Volume Managed'],
